@@ -1,0 +1,19 @@
+Solution for 2
+All three graphs are resilient under random attack as the first 20% of their nodes are removed (unless the random order happens to remove a large number of high degree nodes, which is unlikely). In particular, all three curves have an approximate slope of −1 as the number of nodes removed varies from 0 to 240.
+If the submitted answer states that one of the graphs is not resilient to a random attack, check the corresponding resilience curve in Question 1. If there is a large drop (> 25%) in the resilience for this curve when the first 20% of the nodes are removed, assume that the submitter was unlucky and count the submitted answer for this graph as being correct. (If you have doubt about whether the drop is 25%, give your peer the benefit of the doubt.) Otherwise, count the answer as being incorrect.
+
+Solution for 3
+The running time for targeted_order is O(n2). Since the code is simple, we will leave the analysis to you.
+Lines 1-5 in fast_targeted_order take O(n+m) time. The running time for remaining portion of fast_targeted_order is also O(n+m). To arrive at this bound, we note that fast_targeted_order performs a constant number of single item set operations for each node and edge in the graph. Since each of these set operations are assumed to O(1), the running time for this algorithm is O(n+m) where m is the number of edges. Since number of edges in the UPA graph is bounded by 5n, the running time for all of fast_targeted_order is O(n).
+Reference the formatting guidelines from Question 1 item a for this item. The title of the plot should give some indication of what implementation of Python was used when running the program to help understand the vertical scale. The main point of this item is to distinguish desktop Python from CodeSkulptor due to the significant gap in their performance. Be generous here when grading and accept anything that sounds plausible. Answers like "desktop Python", "command line Python", "CPython", "IPython", and "CodeSkulptor" are fine. IDE names like "IDLE", "Anaconda" and "Canopy" are also fine. The user does not need to include version information.
+Also, note that the curves in the plot may be somewhat noisy (bumpy). This shape is the result of Python's garbage collector (and other activities on the computer) slowing Python's performance and should not affect your scoring.
+
+
+Solution for 5
+In general, the resilience for all three graphs should drop towards zero very quickly with the ER graph being most resilient and the computer network being least resilient. If the submitted plot for the m=3 UPA curve is shifted significantly to the left and instead looks like the solution plot for the m=2 UPA curve, score that curve as being incorrect since this shift indicates that incorrect probabilities were used in computing the UPA graph.
+
+
+Solution for 6
+ Which of the three graphs are resilient under targeted attacks as the first 20% of their nodes are removed?
+The slope of the ER curve is close to −1 as the first 20% of the nodes in the graph are removed. Therefore, the ER graph is resilient to targeted attacks of this type. On the other hand, the size of the largest connected component in the computer network drops to almost zero when the first 20% of the nodes are removed. Therefore, the computer network should not be listed as being resilient.
+The UPA graph is a close call. For m=2, the size of the largest connected component drops to zero fairly quickly as 20% of the nodes are removed. For m=3, this size is fairly close to the number of nodes remaining as 20% of the nodes are removed and is just starting to drop signficantly. So, either choice (listing the UPA graph as being resilient or not listing the UPA graph as being resilient) should be counted as correct.
