@@ -1,0 +1,23 @@
+Solution for 2
+Yes. The ER algorithm treats each node in the graph in the same manner. So the expected value of the in-degree for each node must be the same. In fact, the in-degree distribution is the same for each node.  
+As noted in the Homework, the in-degree of an arbitrary node in a directed ER graph is binomially distributed. Therefore, the in-degree distribution for the entire graph must also be binomial.
+This distribution is often described as "bump-shaped" or "bell-shaped". Correct descriptions of the shape may include terms like "binomial distribution", "normal distribution", "Gaussian", "Poisson distribution", even though it is important to note that normal (Gaussian) is a continuous distribution
+ No. The two distributions are not similar. The in-degree distributions for ER graphs are binomial (bump-shaped) and are substantially different from the linear shape of in-degree distributions for citation graphs.  
+
+
+
+Solution for 3
+The value of nnn is the number of papers in the citation graph, which is 277702777027770. Since the text asked for a rough value, score values for nnn between 270002700027000 and 280002800028000 as being correct.   
+The citation graph has 352768352768352768 total edges and 277702777027770 total nodes. So the average out-degree is approximately 12.712.712, point, 7. Since the value of mmm must be an integer, the answer may be rounded either up of down to the nearest integer. So, either m=12m=12m, equals, 12 or m=13m=13m, equals, 13 is an acceptable answer.  
+The answers m=14m=14m, equals, 14 and m=15m=15m, equals, 15 should also receive full credit since, in practice, the actual number of edges in the final DPA graph is often closer to 352768352768352768 for these values due to the fact that fewer than mmm edges are sometimes added during each iteration of the algorithm.
+
+
+  
+
+
+Solution for 5
+ The plot of the in-degree distribution of the DPA graph is indeed similar to that of the citation graph. They agree on all of the items listed in item c for Question 1. In particular, the points in both plots are accurately approximated by a line with falling (negative) slope. In both cases, the points tend to scatter more as the fraction of points (papers) decreases.  
+The correct phenomenon is "The rich gets richer". In Algorithm DPA, a node with a higher degree (rich) has a higher probability of getting a new edge (richer). This process modeled by Algorithm DPA mimics the behavior of "The rich gets richer" model in which the wealthy have the means to more easily acquire new wealth.
+Historically, this answer has generated vigorous disagreement by a small number of students who have argued for "Hierarchical structure of networks" or "Six degrees of separation". Since the answer to this question is more subjective than usual, you should also give credit to answers that cite the "Hierarchical structure of networks" or "Six degrees of separation" as long as the answer provides an explanation for that choice
+ The "Rich get richer" phenomenon provides an explanation for the structure of the citation graph. Papers (nodes) that have lots of citations (incoming edges) are more visible and, therefore, more likely to draw new citations (incoming edges) due to their visibility. For this part of the question, only give credit for answers that cite "The rich get richer."  
+
